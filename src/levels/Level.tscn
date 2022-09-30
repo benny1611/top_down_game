@@ -11,6 +11,6 @@ __meta__ = {
 [node name="Gamejam Tileset" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 235, 115 )
+position = Vector2( 200, 128 )
 
 [editable path="Player"]

@@ -4,14 +4,17 @@ extends KinematicBody2D
 signal player_killed
 signal won
 export (int) var speed = 100
+export (int) var jump_speed = 300
 
 var velocity := Vector2.ZERO
 var treasures := 0
 var extents : Vector2
 var dead := false
 var isLookingRight = true
+var jumpingSprite = preload("res://assets/Jump_Middle.png")
 
 onready var animated_sprite = get_node("AnimatedSprite")
+onready var timer: Timer = get_node("JumpTimer")
 
 func _ready():
 	Global.player = self
@@ -22,6 +25,7 @@ func get_extents():
 
 func get_input():
 	velocity = Vector2()
+	var jump = false
 	if Input.is_action_just_pressed("ui_right"):
 		if not isLookingRight:
 			isLookingRight = true
@@ -48,8 +52,29 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+	if Input.is_action_just_pressed("jump"):
+		if timer.get_time_left() == 0.0:
+			set_collision_mask_bit(2, false)
+			velocity.y -= 1
+			if isLookingRight:
+				velocity.x += 6
+			else:
+				velocity.x -= 6
+			animated_sprite.play("jump")
+			velocity = velocity * jump_speed
+			jump = true
+			timer.start()
+	if not jump:
+		velocity = velocity.normalized() * speed
 
+
+func _on_JumpTimer_timeout():
+	velocity = Vector2()
+	set_collision_mask_bit(2, true)
+	velocity.y += 1
+	velocity = velocity.normalized() * jump_speed
+	velocity = move_and_slide(velocity)
+	animated_sprite.play("idle")
 
 func _physics_process(_delta):
 	get_input()
