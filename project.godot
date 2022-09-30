@@ -60,8 +60,8 @@ Global="*res://src/Global.gd"
 
 [display]
 
-window/size/width=240
-window/size/height=208
+window/size/width=350
+window/size/height=192
 window/size/test_width=720
 window/size/test_height=624
 window/stretch/mode="viewport"
