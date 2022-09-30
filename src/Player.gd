@@ -9,19 +9,41 @@ var velocity := Vector2.ZERO
 var treasures := 0
 var extents : Vector2
 var dead := false
+var isLookingRight = true
+
+onready var animated_sprite = get_node("AnimatedSprite")
 
 func _ready():
 	Global.player = self
+	animated_sprite.play("idle")
 
 func get_extents():
 	return $CollisionShape2D.shape.extents
 
 func get_input():
 	velocity = Vector2()
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_just_pressed("ui_right"):
+		if not isLookingRight:
+			isLookingRight = true
+			animated_sprite.flip_h = false
+		animated_sprite.play("begin_running")
 		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_right"):
+		animated_sprite.play("actually_running")
+		velocity.x += 1
+	elif Input.is_action_just_released("ui_right"):
+		animated_sprite.play("idle")
+	if Input.is_action_just_pressed("ui_left"):
+		if isLookingRight:
+			isLookingRight = false
+			animated_sprite.flip_h = true
+		animated_sprite.play("begin_running")
 		velocity.x -= 1
+	elif Input.is_action_pressed("ui_left"):
+		animated_sprite.play("actually_running")
+		velocity.x -= 1
+	elif Input.is_action_just_released("ui_left"):
+		animated_sprite.play("idle")
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
