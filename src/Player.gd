@@ -16,6 +16,8 @@ var jump = false
 var in_log = false
 var onPlatform = false
 var platformSpeed = 0.0
+var gravity = 100
+var yLimit = 0.0
 
 onready var animated_sprite = get_node("AnimatedSprite")
 onready var timer: Timer = get_node("JumpTimer")
@@ -30,7 +32,9 @@ func get_extents():
 func get_input(delta):
 	velocity = Vector2()
 	if jump:
-		return
+		if position.y < yLimit:
+			velocity.y += 1.5
+			return
 	if Input.is_action_just_pressed("ui_right"):
 		if not isLookingRight:
 			isLookingRight = true
@@ -67,7 +71,8 @@ func get_input(delta):
 			#set_collision_mask_bit(2, false)
 			animated_sprite.play("jump")
 			jump = true
-			velocity.y -= 2
+			yLimit = position.y
+			velocity.y -= 100*delta
 			if isLookingRight:
 				velocity.x += 5
 			else:
@@ -84,7 +89,7 @@ func get_input(delta):
 func _on_JumpTimer_timeout():
 	#set_collision_mask_bit(2, true)
 	jump = false
-	velocity.y += 2
+	#velocity.y += 2
 	animated_sprite.play("idle")
 	velocity = move_and_slide(velocity * jump_speed)
 

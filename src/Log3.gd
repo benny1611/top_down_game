@@ -1,13 +1,11 @@
-extends Sprite                    ## Log 3  
+extends AnimatedSprite                    ## Log 3  
 
 var topEdge = Vector2(0,0)
-var bottomEdge = Vector2(0,150) 
+var bottomEdge = Vector2(0,170) 
 var direction = Vector2.LEFT
 
 var speed = 20                   
-onready var imageWidth = texture.get_width() * 2
-
-
+onready var imageWidth = 34 * 2
 
 func _process(delta):
 
