@@ -11,7 +11,11 @@ var treasures := 0
 var extents : Vector2
 var dead := false
 var isLookingRight = true
+var stop_thread = false
+var jump = false
 var jumpingSprite = preload("res://assets/Jump_Middle.png")
+var mutex
+var thread
 
 onready var animated_sprite = get_node("AnimatedSprite")
 onready var timer: Timer = get_node("JumpTimer")
@@ -19,13 +23,14 @@ onready var timer: Timer = get_node("JumpTimer")
 func _ready():
 	Global.player = self
 	animated_sprite.play("idle")
+	mutex = Mutex.new()
+	thread = Thread.new()
 
 func get_extents():
 	return $CollisionShape2D.shape.extents
 
-func get_input():
+func get_input(delta):
 	velocity = Vector2()
-	var jump = false
 	if Input.is_action_just_pressed("ui_right"):
 		if not isLookingRight:
 			isLookingRight = true
@@ -55,30 +60,29 @@ func get_input():
 	if Input.is_action_just_pressed("jump"):
 		if timer.get_time_left() == 0.0:
 			set_collision_mask_bit(2, false)
-			velocity.y -= 1
-			if isLookingRight:
-				velocity.x += 6
-			else:
-				velocity.x -= 6
 			animated_sprite.play("jump")
-			velocity = velocity * jump_speed
 			jump = true
 			timer.start()
+			for n in 200:
+				yield(get_tree().create_timer(0.001), "timeout")
+				velocity.y -= 1
+				if isLookingRight:
+					velocity.x += 50
+				else:
+					velocity.x -= 50
+				velocity = move_and_slide(velocity * delta)
+			velocity.y -= 10
 	if not jump:
 		velocity = velocity.normalized() * speed
-
-
+	
 func _on_JumpTimer_timeout():
-	velocity = Vector2()
 	set_collision_mask_bit(2, true)
-	velocity.y += 1
-	velocity = velocity.normalized() * jump_speed
-	velocity = move_and_slide(velocity)
 	animated_sprite.play("idle")
 
 func _physics_process(_delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+	get_input(_delta)
+	if not jump:
+		velocity = move_and_slide(velocity)
 
 
 func die(obj, signal_str):
