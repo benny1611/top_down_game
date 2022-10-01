@@ -13,9 +13,9 @@ var dead := false
 var isLookingRight = true
 var stop_thread = false
 var jump = false
-var jumpingSprite = preload("res://assets/Jump_Middle.png")
-var mutex
-var thread
+var in_log = false
+var onPlatform = false
+var platformSpeed = 0.0
 
 onready var animated_sprite = get_node("AnimatedSprite")
 onready var timer: Timer = get_node("JumpTimer")
@@ -23,8 +23,6 @@ onready var timer: Timer = get_node("JumpTimer")
 func _ready():
 	Global.player = self
 	animated_sprite.play("idle")
-	mutex = Mutex.new()
-	thread = Thread.new()
 
 func get_extents():
 	return $CollisionShape2D.shape.extents
@@ -69,8 +67,11 @@ func get_input(delta):
 			velocity = velocity * jump_speed
 			velocity = move_and_slide(velocity)
 			timer.start()
-	if not jump:
+	if not jump and not onPlatform:
 		velocity = velocity.normalized() * speed
+	if onPlatform:
+		#print(platformSpeed)
+		position += transform.y * platformSpeed * delta
 	
 func _on_JumpTimer_timeout():
 	set_collision_mask_bit(2, true)
@@ -81,9 +82,22 @@ func _on_JumpTimer_timeout():
 
 func _physics_process(_delta):
 	get_input(_delta)
-	if not jump:
+	if not jump and not onPlatform:
 		velocity = move_and_slide(velocity)
 
+func on_platform(speed):
+	onPlatform = true
+	platformSpeed = speed
+
+func off_platform():
+	onPlatform = false
+	platformSpeed = 0.0
+	
+func is_on_platform():
+	return onPlatform
+	
+func is_jumping():
+	return jump
 
 func die(obj, signal_str):
 	if not dead:
