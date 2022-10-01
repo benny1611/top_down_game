@@ -29,6 +29,8 @@ func get_extents():
 
 func get_input(delta):
 	velocity = Vector2()
+	if jump:
+		return
 	if Input.is_action_just_pressed("ui_right"):
 		if not isLookingRight:
 			isLookingRight = true
@@ -51,9 +53,15 @@ func get_input(delta):
 	elif Input.is_action_just_released("ui_left"):
 		animated_sprite.play("idle")
 	if Input.is_action_pressed("ui_down"):
+		animated_sprite.play("walk_down")
 		velocity.y += 1
+	if Input.is_action_just_released("ui_down"):
+		animated_sprite.play("idle")
 	if Input.is_action_pressed("ui_up"):
+		animated_sprite.play("walk_up")
 		velocity.y -= 1
+	if Input.is_action_just_released("ui_up"):
+		animated_sprite.play("idle")
 	if Input.is_action_just_pressed("jump"):
 		if timer.get_time_left() == 0.0:
 			#set_collision_mask_bit(2, false)
