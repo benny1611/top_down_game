@@ -21,19 +21,9 @@
    <object id="1" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
- <tile id="8">
-  <objectgroup draworder="index" id="2">
-   <object id="1" template="Tree Collision Template.tx" x="1.90909" y="2.22045e-16" width="11.2728" height="16"/>
-  </objectgroup>
- </tile>
  <tile id="10">
   <objectgroup draworder="index" id="2">
    <object id="1" x="2.81819" y="0" width="9.27271" height="16"/>
-  </objectgroup>
- </tile>
- <tile id="24">
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="2" y="0" width="11.1818" height="16"/>
   </objectgroup>
  </tile>
  <tile id="26">
@@ -51,6 +41,11 @@
    <object id="1" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
+ <tile id="40">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="2.90909" y="0" width="9.09091" height="16"/>
+  </objectgroup>
+ </tile>
  <tile id="64">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="0" width="16" height="16"/>
@@ -59,6 +54,11 @@
  <tile id="70">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="88">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="2" y="0" width="11" height="16"/>
   </objectgroup>
  </tile>
  <tile id="96">
@@ -79,6 +79,26 @@
  <tile id="102">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="104">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="1.90909" y="0" width="11.0909" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="168">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="3" y="0" width="10" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="216">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="4.63636" y="0" width="9.18182" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="232">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="4.54545" y="0" width="10.5455" height="16"/>
   </objectgroup>
  </tile>
 </tileset>
