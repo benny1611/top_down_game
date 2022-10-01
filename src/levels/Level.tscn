@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/Gamejam Tileset.tmx" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/EnemyWithPath.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -15,5 +16,8 @@ position = Vector2( 200, 128 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="EnemyWithPath" parent="." instance=ExtResource( 3 )]
+position = Vector2( 444, 166 )
 
 [editable path="Player"]
