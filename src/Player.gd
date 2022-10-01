@@ -46,7 +46,6 @@ func get_input(delta):
 		if isLookingRight:
 			isLookingRight = false
 			animated_sprite.flip_h = true
-		animated_sprite.play("begin_running")
 		velocity.x -= 1
 	elif Input.is_action_pressed("ui_left"):
 		animated_sprite.play("actually_running")
@@ -62,22 +61,23 @@ func get_input(delta):
 			set_collision_mask_bit(2, false)
 			animated_sprite.play("jump")
 			jump = true
+			velocity.y -= 2
+			if isLookingRight:
+				velocity.x += 5
+			else:
+				velocity.x -= 5
+			velocity = velocity * jump_speed
+			velocity = move_and_slide(velocity)
 			timer.start()
-			for n in 200:
-				yield(get_tree().create_timer(0.001), "timeout")
-				velocity.y -= 1
-				if isLookingRight:
-					velocity.x += 50
-				else:
-					velocity.x -= 50
-				velocity = move_and_slide(velocity * delta)
-			velocity.y -= 10
 	if not jump:
 		velocity = velocity.normalized() * speed
 	
 func _on_JumpTimer_timeout():
 	set_collision_mask_bit(2, true)
+	jump = false
+	velocity.y += 2
 	animated_sprite.play("idle")
+	velocity = move_and_slide(velocity * jump_speed)
 
 func _physics_process(_delta):
 	get_input(_delta)
