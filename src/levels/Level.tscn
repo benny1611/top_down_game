@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Gamejam Tileset.tmx" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/EnemyWithPath.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Log4.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Log3.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Log6.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Water.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D" groups=["main"]]
@@ -17,7 +16,7 @@ __meta__ = {
 color = Color( 0.0745098, 0.00392157, 0.00392157, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 218, 132 )
+position = Vector2( 75, 91 )
 
 [node name="Gamejam Tileset" parent="." instance=ExtResource( 1 )]
 
@@ -27,52 +26,69 @@ position = Vector2( 444, 166 )
 [node name="WaterContainer" type="Node2D" parent="."]
 
 [node name="Log3_1" parent="WaterContainer" instance=ExtResource( 5 )]
-position = Vector2( 1444, -57 )
+position = Vector2( 1448, -53 )
 rotation = 1.5708
 
 [node name="Log3_2" parent="WaterContainer" instance=ExtResource( 5 )]
-position = Vector2( 1444, 6 )
+position = Vector2( 1448, 6 )
 rotation = 1.5708
 
 [node name="Log3_3" parent="WaterContainer" instance=ExtResource( 5 )]
-position = Vector2( 1444, 72 )
+position = Vector2( 1448, 72 )
 rotation = 1.5708
 
 [node name="Log3_4" parent="WaterContainer" instance=ExtResource( 5 )]
-position = Vector2( 1444, 139 )
+position = Vector2( 1448, 139 )
 rotation = 1.5708
 
 [node name="Log3_5" parent="WaterContainer" instance=ExtResource( 5 )]
-position = Vector2( 1444, 202 )
+position = Vector2( 1448, 216 )
 rotation = 1.5708
+
+[node name="Log3_6" parent="WaterContainer" instance=ExtResource( 5 )]
+position = Vector2( 1503, -33 )
+rotation = 1.5708
+frame = 0
+
+[node name="Log3_7" parent="WaterContainer" instance=ExtResource( 5 )]
+position = Vector2( 1503, 35 )
+rotation = 1.5708
+frame = 0
+
+[node name="Log3_8" parent="WaterContainer" instance=ExtResource( 5 )]
+position = Vector2( 1503, 101 )
+rotation = 1.5708
+frame = 0
+
+[node name="Log3_9" parent="WaterContainer" instance=ExtResource( 5 )]
+position = Vector2( 1503, 159 )
+rotation = 1.5708
+frame = 0
+
+[node name="Log3_10" parent="WaterContainer" instance=ExtResource( 5 )]
+position = Vector2( 1503, 224 )
+rotation = 1.5708
+frame = 0
 
 [node name="Log4_1" parent="WaterContainer" instance=ExtResource( 4 )]
-position = Vector2( 1470, -22 )
+position = Vector2( 1475, -50 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log4_2" parent="WaterContainer" instance=ExtResource( 4 )]
-position = Vector2( 1470, 56 )
+position = Vector2( 1475, 35 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log4_3" parent="WaterContainer" instance=ExtResource( 4 )]
-position = Vector2( 1470, 127 )
+position = Vector2( 1475, 120 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log4_4" parent="WaterContainer" instance=ExtResource( 4 )]
-position = Vector2( 1470, 195 )
+position = Vector2( 1475, 205 )
 rotation = 1.5708
-
-[node name="Log6_1" parent="WaterContainer" instance=ExtResource( 6 )]
-position = Vector2( 1497, -17 )
-rotation = 1.5708
-
-[node name="Log6_2" parent="WaterContainer" instance=ExtResource( 6 )]
-position = Vector2( 1497, 93 )
-rotation = 1.5708
-
-[node name="Log6_3" parent="WaterContainer" instance=ExtResource( 6 )]
-position = Vector2( 1497, 206 )
-rotation = 1.5708
+frame = 0
 
 [node name="Water_1" parent="WaterContainer" instance=ExtResource( 7 )]
 position = Vector2( 1445, 167 )

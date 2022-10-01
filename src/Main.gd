@@ -43,15 +43,15 @@ func _load_level(level_str: String, gate_str: String, offset_pct: float):
 	# TODO: check for null level_resource, and load default secene
 	var level = level_resource.instance()
 	$Level.add_child(level)
-	var gate = level.get_node(gate_str)
+	#var gate = level.get_node(gate_str)
 	# TODO: check that we actually got a Gate, or find default gate
-	gate.enter_gate(offset_pct)
+	#gate.enter_gate(offset_pct)
 	connect_gates(level)
-	var bounds = level.get_node_or_null("Bounds")
-	if bounds:
-		Global.player.update_camera_limits(bounds.get_rect())
-	else:
-		Global.player.update_camera_limits(Rect2(-10000000,-10000000,20000000,20000000))
+	#var bounds = level.get_node_or_null("Bounds")
+	#if bounds:
+	#	Global.player.update_camera_limits(bounds.get_rect())
+	#else:
+	#	Global.player.update_camera_limits(Rect2(-10000000,-10000000,20000000,20000000))
 	# wait till the next physics frame for the player's location to be updated.
 	# Not sure why I need to wait two frames if not called during a physics
 	# frame. Insted of this, I could remove and player from the scene tree and
@@ -112,7 +112,7 @@ func continue_game():
 func start_game():
 	$UI.disabled = true
 	remove_save()
-	call_deferred("_load_level", "res://src/levels/Level1.tscn", "StartGate", 0)
+	call_deferred("_load_level", "res://src/levels/Level.tscn", "StartGate", 0)
 
 
 func restart_game():

@@ -1,10 +1,10 @@
-extends Sprite                    ## Log 6  
+extends AnimatedSprite                    ## Log 6  
 
 var leftEdge = Vector2(0,0)
-var rightEdge = Vector2(0,120) 
+var rightEdge = Vector2(0,75) 
 
 var speed = 40                   
-onready var imageWidth = texture.get_width() * 2  
+onready var imageWidth = 64 * 2  
 
 func _ready():
 	pass 

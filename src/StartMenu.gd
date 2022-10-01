@@ -7,6 +7,7 @@ func menu_action(action_str):
 	match action_str:
 		"Start":
 			close_ui()
+			$Menu/Layer.visible = false
 			emit_signal("start_game")
 		"Continue":
 			close_ui()
@@ -17,9 +18,7 @@ func menu_action(action_str):
 func open_menu():
 	var save_file = File.new()
 	if not save_file.file_exists(Global.SAVE_FILE):
-		$Menu/Continue.visible = false
-		$Menu/Start.text = "Start"
+		$Menu/Layer/Menu/Start.text = "Find your way"
 	else:
-		$Menu/Continue.visible = true
-		$Menu/Start.text = "Restart"
+		$Menu/Layer/Menu/Start.text = "Restart"
 	.open_menu()

@@ -63,7 +63,6 @@ func open_menu():
 func close_menu():
 	visible = false
 
-
 func menu_action(action_str):
 	print(action_str, " selected")
 
