@@ -56,7 +56,7 @@ func get_input(delta):
 		velocity.y -= 1
 	if Input.is_action_just_pressed("jump"):
 		if timer.get_time_left() == 0.0:
-			set_collision_mask_bit(2, false)
+			#set_collision_mask_bit(2, false)
 			animated_sprite.play("jump")
 			jump = true
 			velocity.y -= 2
@@ -74,7 +74,7 @@ func get_input(delta):
 		position += transform.y * platformSpeed * delta
 	
 func _on_JumpTimer_timeout():
-	set_collision_mask_bit(2, true)
+	#set_collision_mask_bit(2, true)
 	jump = false
 	velocity.y += 2
 	animated_sprite.play("idle")
@@ -82,7 +82,7 @@ func _on_JumpTimer_timeout():
 
 func _physics_process(_delta):
 	get_input(_delta)
-	if not jump and not onPlatform:
+	if not jump:
 		velocity = move_and_slide(velocity)
 
 func on_platform(speed):
