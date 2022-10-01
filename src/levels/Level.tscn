@@ -16,7 +16,7 @@ __meta__ = {
 [node name="Gamejam Tileset" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 395, 147 )
+position = Vector2( 1370, 131 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -75,153 +75,153 @@ position = Vector2( 1497, 206 )
 rotation = 1.5708
 
 [node name="Water_1" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 168 )
+position = Vector2( 1445, 167 )
 
 [node name="Water_2" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 153 )
+position = Vector2( 1445, 152 )
 
 [node name="Water_3" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 137 )
+position = Vector2( 1445, 136 )
 
 [node name="Water_4" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 121 )
+position = Vector2( 1445, 120 )
 
 [node name="Water_5" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 105 )
+position = Vector2( 1445, 104 )
 
 [node name="Water_6" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 89 )
+position = Vector2( 1445, 88 )
 
 [node name="Water_7" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 73 )
+position = Vector2( 1445, 72 )
 
 [node name="Water_8" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 57 )
+position = Vector2( 1445, 56 )
 
 [node name="Water_9" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 41 )
+position = Vector2( 1445, 40 )
 
 [node name="Water_10" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1445, 25 )
+position = Vector2( 1445, 24 )
 
 [node name="Water_11" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 168 )
+position = Vector2( 1461, 167 )
 
 [node name="Water_12" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 153 )
+position = Vector2( 1461, 152 )
 
 [node name="Water_13" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 137 )
+position = Vector2( 1461, 136 )
 
 [node name="Water_14" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 121 )
+position = Vector2( 1461, 120 )
 
 [node name="Water_15" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 105 )
+position = Vector2( 1461, 104 )
 
 [node name="Water_16" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 89 )
+position = Vector2( 1461, 88 )
 
 [node name="Water_17" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 73 )
+position = Vector2( 1461, 72 )
 
 [node name="Water_18" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 57 )
+position = Vector2( 1461, 56 )
 
 [node name="Water_19" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 41 )
+position = Vector2( 1461, 40 )
 
 [node name="Water_20" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1461, 25 )
+position = Vector2( 1461, 24 )
 
 [node name="Water_21" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 168 )
+position = Vector2( 1477, 167 )
 
 [node name="Water_22" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 153 )
+position = Vector2( 1477, 152 )
 
 [node name="Water_23" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 137 )
+position = Vector2( 1477, 136 )
 
 [node name="Water_24" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 121 )
+position = Vector2( 1477, 120 )
 
 [node name="Water_25" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 105 )
+position = Vector2( 1477, 104 )
 
 [node name="Water_26" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 89 )
+position = Vector2( 1477, 88 )
 
 [node name="Water_27" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 73 )
+position = Vector2( 1477, 72 )
 
 [node name="Water_28" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 57 )
+position = Vector2( 1477, 56 )
 
 [node name="Water_29" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 41 )
+position = Vector2( 1477, 40 )
 
 [node name="Water_30" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1477, 25 )
+position = Vector2( 1477, 24 )
 
 [node name="Water_31" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 168 )
+position = Vector2( 1493, 167 )
 
 [node name="Water_32" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 153 )
+position = Vector2( 1493, 152 )
 
 [node name="Water_33" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 137 )
+position = Vector2( 1493, 136 )
 
 [node name="Water_34" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 121 )
+position = Vector2( 1493, 120 )
 
 [node name="Water_35" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 105 )
+position = Vector2( 1493, 104 )
 
 [node name="Water_36" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 89 )
+position = Vector2( 1493, 88 )
 
 [node name="Water_37" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 73 )
+position = Vector2( 1493, 72 )
 
 [node name="Water_38" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 57 )
+position = Vector2( 1493, 56 )
 
 [node name="Water_39" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 41 )
+position = Vector2( 1493, 40 )
 
 [node name="Water_40" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1493, 25 )
+position = Vector2( 1493, 24 )
 
 [node name="Water_41" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 168 )
+position = Vector2( 1509, 167 )
 
 [node name="Water_42" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 153 )
+position = Vector2( 1509, 152 )
 
 [node name="Water_43" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 137 )
+position = Vector2( 1509, 136 )
 
 [node name="Water_44" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 121 )
+position = Vector2( 1509, 120 )
 
 [node name="Water_45" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 105 )
+position = Vector2( 1509, 104 )
 
 [node name="Water_46" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 89 )
+position = Vector2( 1509, 88 )
 
 [node name="Water_47" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 73 )
+position = Vector2( 1509, 72 )
 
 [node name="Water_48" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 57 )
+position = Vector2( 1509, 56 )
 
 [node name="Water_49" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 41 )
+position = Vector2( 1509, 40 )
 
 [node name="Water_50" parent="WaterContainer" instance=ExtResource( 7 )]
-position = Vector2( 1509, 25 )
+position = Vector2( 1509, 24 )
 
 [editable path="Player"]
