@@ -149,7 +149,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5, 6.5 )
+extents = Vector2( 3.5, 4 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 0, 0 )
@@ -180,7 +180,7 @@ frames = SubResource( 18 )
 animation = "actually_running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 9.5 )
+position = Vector2( -0.5, 12 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true

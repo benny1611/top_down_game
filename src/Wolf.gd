@@ -5,5 +5,4 @@ func _ready():
 
 
 func _on_Wolf_body_entered(body):
-	body.canJump = true
 	queue_free()

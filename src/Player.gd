@@ -19,7 +19,7 @@ var platformSpeed = 0.0
 var gravity = 100
 var yLimit = 0.0
 var movement = false
-var canJump = false
+var canJump = true
 
 onready var animated_sprite = get_node("AnimatedSprite")
 onready var timer: Timer = get_node("JumpTimer")
