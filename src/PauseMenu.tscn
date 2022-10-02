@@ -38,7 +38,5 @@ margin_bottom = 47.0
 text = "Quit"
 
 [editable path="Menu/Resume"]
-
 [editable path="Menu/Reload"]
-
 [editable path="Menu/Quit"]

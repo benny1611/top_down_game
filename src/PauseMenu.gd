@@ -18,4 +18,5 @@ func menu_action(action_str):
 			emit_signal("reload_level")
 		"Quit":
 			close_ui()
+			get_tree().quit()
 			emit_signal("restart_game")

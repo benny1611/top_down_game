@@ -116,7 +116,7 @@ position = Vector2( 680, 96 )
 z_index = 100
 
 [node name="AnimatedSprite" parent="Wolf" index="0"]
-frame = 5
+frame = 2
 
 [node name="Sprite" parent="Wolf/AnimationPlayer/CanvasLayer" index="0"]
 visible = false
@@ -126,7 +126,7 @@ position = Vector2( 1088, 40 )
 z_index = 100
 
 [node name="AnimatedSprite" parent="Fox" index="0"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="Fox/AnimationPlayer/CanvasLayer" index="0"]
 visible = false
@@ -136,21 +136,15 @@ position = Vector2( 2405, 30 )
 z_index = 100
 
 [node name="AnimatedSprite" parent="Vidra" index="0"]
-frame = 20
+frame = 12
 
 [node name="Sprite" parent="Vidra/AnimationPlayer/CanvasLayer" index="0"]
 visible = false
 
 [node name="Cutscene" parent="." instance=ExtResource( 6 )]
 
-[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_1" index="0"]
-frame = 0
-
-[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_3" index="0"]
-frame = 0
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 298, 83 )
+position = Vector2( 302, 76 )
 
 [node name="Camera2D" parent="Player" index="4"]
 current = false
@@ -483,63 +477,67 @@ position = Vector2( 2616, 168 )
 [node name="Log3_1" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2424, -53 )
 rotation = 1.5708
-frame = 0
 
 [node name="Log3_2" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2424, 6 )
 rotation = 1.5708
-frame = 0
 
 [node name="Log3_3" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2424, 72 )
 rotation = 1.5708
-frame = 0
 
 [node name="Log3_4" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2424, 139 )
 rotation = 1.5708
-frame = 0
 
 [node name="Log3_5" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2424, 216 )
 rotation = 1.5708
-frame = 0
 
 [node name="Log3_6" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2552, -33 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log3_7" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2552, 35 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log3_8" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2552, 101 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log3_9" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2552, 159 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log3_10" parent="Water" instance=ExtResource( 5 )]
 position = Vector2( 2552, 224 )
 rotation = 1.5708
+frame = 0
 
 [node name="Log4_1" parent="Water" instance=ExtResource( 4 )]
 position = Vector2( 2457, -40 )
 rotation = 1.5708
+frame = 1
 
 [node name="Log4_2" parent="Water" instance=ExtResource( 4 )]
 position = Vector2( 2456, 35 )
 rotation = 1.5708
+frame = 1
 
 [node name="Log4_3" parent="Water" instance=ExtResource( 4 )]
 position = Vector2( 2456, 120 )
 rotation = 1.5708
+frame = 1
 
 [node name="Log4_4" parent="Water" instance=ExtResource( 4 )]
 position = Vector2( 2456, 205 )
 rotation = 1.5708
+frame = 1
 
 [node name="tile1" parent="." instance=ExtResource( 19 )]
 position = Vector2( 2424, 184 )

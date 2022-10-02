@@ -62,6 +62,7 @@ Global="*res://src/Global.gd"
 
 window/size/width=350
 window/size/height=192
+window/size/fullscreen=true
 window/size/test_width=720
 window/size/test_height=624
 window/stretch/mode="viewport"
@@ -74,6 +75,7 @@ enabled=PoolStringArray( "res://addons/vnen.tiled_importer/plugin.cfg" )
 [global]
 
 fullscreen=false
+display=false
 
 [importer_defaults]
 

@@ -59,6 +59,9 @@ visible = false
 [node name="Player" parent="." instance=ExtResource( 2 )]
 visible = false
 
+[node name="Sprite" parent="Player/AnimationPlayer/CanvasLayer" index="0"]
+visible = false
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
@@ -75,3 +78,5 @@ visible = false
 [connection signal="restart_game" from="UI/GameEnd" to="." method="restart_game"]
 [connection signal="player_killed" from="Player" to="." method="reload_level"]
 [connection signal="won" from="Player" to="." method="_on_Player_won"]
+
+[editable path="Player"]
