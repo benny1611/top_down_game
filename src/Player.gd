@@ -19,6 +19,7 @@ var platformSpeed = 0.0
 var gravity = 100
 var yLimit = 0.0
 var movement = false
+var canJump = false
 
 onready var animated_sprite = get_node("AnimatedSprite")
 onready var timer: Timer = get_node("JumpTimer")
@@ -69,7 +70,7 @@ func get_input(delta):
 		velocity.y -= 1
 	if Input.is_action_just_released("ui_up"):
 		animated_sprite.play("idle")
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and canJump:
 		if timer.get_time_left() == 0.0:
 			#set_collision_mask_bit(2, false)
 			animated_sprite.play("jump")
@@ -163,3 +164,7 @@ func update_camera_limits(rect : Rect2):
 	$Camera2D.limit_left = rect.position.x
 	$Camera2D.limit_bottom = rect.end.y
 	$Camera2D.limit_right = rect.end.x
+	
+
+func increase_visibility():
+	get_node("Fog").queue_free()

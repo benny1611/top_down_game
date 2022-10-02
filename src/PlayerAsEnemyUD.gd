@@ -1,7 +1,7 @@
 extends Node
 
-onready var follow = get_node("Path2D/PathFollow2D")
-onready var anim = get_node("Path2D/PathFollow2D/Area2D/AnimatedSprite")
+onready var follow = get_parent().get_node("PathFollow2D")
+onready var anim = get_parent().get_node("PathFollow2D/Area2D/AnimatedSprite")
 var is_going_up = true
 var flip = false
 var speed = 70

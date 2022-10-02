@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id=10]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 69, 18 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 32, 16 )
 }
 
 [sub_resource type="CanvasItemMaterial" id=11]
@@ -47,31 +47,31 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 3.25, 8.25 )
 
-[node name="PlayerAsEnemy" type="Node"]
-script = ExtResource( 3 )
-
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Path2D" type="Path2D"]
 curve = SubResource( 10 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2( 0, 18 )
 rotate = false
 cubic_interp = false
 loop = false
 
-[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+[node name="Area2D" type="Area2D" parent="PathFollow2D"]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Path2D/PathFollow2D/Area2D"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D/Area2D"]
 material = SubResource( 11 )
 frames = SubResource( 8 )
-frame = 2
+frame = 5
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D"]
 position = Vector2( -0.25, 5.25 )
 shape = SubResource( 9 )
 
-[node name="EnemySound" type="AudioStreamPlayer" parent="."]
+[node name="PlayerAsEnemy" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="EnemySound" type="AudioStreamPlayer" parent="PlayerAsEnemy"]
 stream = ExtResource( 2 )
 
-[connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="PathFollow2D/Area2D" to="PlayerAsEnemy" method="_on_body_entered"]

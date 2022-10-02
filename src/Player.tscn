@@ -7,14 +7,10 @@
 [ext_resource path="res://assets/Walk_Up.png" type="Texture" id=5]
 [ext_resource path="res://assets/Walk_Down.png" type="Texture" id=6]
 [ext_resource path="res://src/Fade.tscn" type="PackedScene" id=7]
-
-[sub_resource type="Gradient" id=46]
-interpolation_mode = 2
-offsets = PoolRealArray( 0.375, 0.5, 0.633333 )
-colors = PoolColorArray( 0.136719, 0.136719, 0.136719, 1, 0.957031, 0.957031, 0.957031, 1, 0.136719, 0.136719, 0.136719, 1 )
+[ext_resource path="res://src/post_vision.tres" type="Gradient" id=8]
 
 [sub_resource type="GradientTexture" id=47]
-gradient = SubResource( 46 )
+gradient = ExtResource( 8 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
@@ -219,5 +215,12 @@ one_shot = true
 visible = false
 
 [node name="Fade" parent="FadeLayer" instance=ExtResource( 7 )]
+
+[node name="Fog" type="ColorRect" parent="."]
+margin_left = -240.0
+margin_top = -184.0
+margin_right = 264.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 0.180392 )
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
