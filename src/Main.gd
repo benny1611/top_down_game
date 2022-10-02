@@ -113,7 +113,12 @@ func start_game():
 	$UI.disabled = true
 	remove_save()
 	call_deferred("_load_level", "res://src/levels/Level.tscn", "StartGate", 0)
+	$FadeLayer.visible = true
+	$FadeLayer/Fade/Player.play("fade_in")
+	$FadeLayer/Fade/Player.connect("animation_finished", self, "start_fade_finished")
 
+func start_fade_finished(value: String):
+	pass
 
 func restart_game():
 	$UI.disabled = true

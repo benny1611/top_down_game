@@ -15,7 +15,6 @@ curve = SubResource( 1 )
 
 [node name="EnemyFollower2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 165, 1 )
-rotation = -0.00421834
 rotate = false
 cubic_interp = false
 script = ExtResource( 1 )

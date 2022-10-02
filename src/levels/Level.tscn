@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/Gamejam Tileset.tmx" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/EnemyWithPath.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Log4.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Log3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Cutscene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Water.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/levels/Level.gd" type="Script" id=8]
+[ext_resource path="res://src/DialogueBox.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D" groups=["main"]]
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 192.0 ]
 }
@@ -15,8 +19,23 @@ __meta__ = {
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.0745098, 0.00392157, 0.00392157, 1 )
 
+[node name="Cutscene" parent="." instance=ExtResource( 6 )]
+
+[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/Cutscene" index="0"]
+frame = 2
+playing = true
+
+[node name="Polygon2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 111, 134 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 101
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 75, 91 )
+visible = false
+position = Vector2( 100, 100 )
+
+[node name="Camera2D" parent="Player" index="4"]
+current = false
 
 [node name="Gamejam Tileset" parent="." instance=ExtResource( 1 )]
 
@@ -239,3 +258,6 @@ position = Vector2( 1509, 40 )
 
 [node name="Water_50" parent="WaterContainer" instance=ExtResource( 7 )]
 position = Vector2( 1509, 24 )
+
+[editable path="Cutscene"]
+[editable path="Player"]

@@ -18,6 +18,7 @@ var onPlatform = false
 var platformSpeed = 0.0
 var gravity = 100
 var yLimit = 0.0
+var movement = false
 
 onready var animated_sprite = get_node("AnimatedSprite")
 onready var timer: Timer = get_node("JumpTimer")
@@ -31,6 +32,8 @@ func get_extents():
 
 func get_input(delta):
 	velocity = Vector2()
+	if not movement:
+		return
 	if jump:
 		if position.y < yLimit:
 			velocity.y += 1.5
@@ -120,7 +123,13 @@ func die(obj, signal_str):
 		if obj != null:
 			yield(obj, signal_str)
 		emit_signal("player_killed")
+		$FadeLayer.visible = true
+		$FadeLayer/Fade/Player.play("fade_out")
+		$FadeLayer/Fade/Player.connect("animation_finished", self, "fade_finished")
 
+func fade_finished(value: String):
+	$FadeLayer.visible = false
+	get_tree().reload_current_scene()
 
 # must be called during idle period
 func disable():
