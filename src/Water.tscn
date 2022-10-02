@@ -2,8 +2,17 @@
 
 [ext_resource path="res://assets/Dead Waters.png" type="Texture" id=1]
 [ext_resource path="res://src/Entity.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Trap.gd" type="Script" id=3]
 [ext_resource path="res://assets/trap.wav" type="AudioStream" id=4]
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends \"res://src/Entity.gd\"
+
+func player_entered(body):
+	#print(body.is_on_platform())
+	if body.has_method(\"die\") and not body.is_on_platform() and not body.is_jumping():
+		$TrapSound.play()
+		body.die(null, \"\")
+"
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -30,12 +39,12 @@ animations = [ {
 } ]
 
 [node name="Water" instance=ExtResource( 2 )]
-script = ExtResource( 3 )
+script = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 5 )
 animation = "wave"
-frame = 3
+frame = 2
 playing = true
 
 [node name="TrapSound" type="AudioStreamPlayer" parent="." index="3"]
