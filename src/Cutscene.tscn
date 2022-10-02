@@ -10,7 +10,7 @@ length = 2.0
 resource_name = "move_to_right"
 length = 8.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Cutscene/CutscenePlayer/Bocitoare_1/AnimatedSprite:animation")
+tracks/0/path = NodePath("Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_1/AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ "idle", "singing" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Cutscene/CutscenePlayer/Bocitoare_2/AnimatedSprite:animation")
+tracks/1/path = NodePath("Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_2/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ "idle", "singing" ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Cutscene/CutscenePlayer/Bocitoare_3/AnimatedSprite:animation")
+tracks/2/path = NodePath("Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_3/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -46,7 +46,7 @@ tracks/2/keys = {
 "values": [ "idle", "singing" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Cutscene/CutscenePlayer/TextImage:visible")
+tracks/3/path = NodePath("Cutscene/CutscenePlayer/CanvasLayer/TextImage:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -58,7 +58,7 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Cutscene/CutscenePlayer/Bocitoare_1/woman_singing_1:playing")
+tracks/4/path = NodePath("Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_1/woman_singing_1:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -70,7 +70,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Cutscene/CutscenePlayer/Bocitoare_1/woman_singing_2:playing")
+tracks/5/path = NodePath("Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_1/woman_singing_2:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -104,42 +104,43 @@ root_node = NodePath("../..")
 anims/RESET = SubResource( 48 )
 anims/move_to_right = SubResource( 49 )
 
-[node name="Bocitoare_1" parent="CutscenePlayer" instance=ExtResource( 1 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="CutscenePlayer"]
+
+[node name="Bocitoare_1" parent="CutscenePlayer/CanvasLayer" instance=ExtResource( 1 )]
 position = Vector2( 58, 136 )
 
-[node name="AnimatedSprite" parent="CutscenePlayer/Bocitoare_1" index="0"]
+[node name="AnimatedSprite" parent="CutscenePlayer/CanvasLayer/Bocitoare_1" index="0"]
 animation = "idle"
-frame = 1
 
-[node name="Bocitoare_2" parent="CutscenePlayer" instance=ExtResource( 1 )]
+[node name="Bocitoare_2" parent="CutscenePlayer/CanvasLayer" instance=ExtResource( 1 )]
 position = Vector2( 88, 114 )
 
-[node name="AnimatedSprite" parent="CutscenePlayer/Bocitoare_2" index="0"]
-animation = "idle"
-frame = 0
-
-[node name="Bocitoare_3" parent="CutscenePlayer" instance=ExtResource( 1 )]
-position = Vector2( 38, 114 )
-
-[node name="AnimatedSprite" parent="CutscenePlayer/Bocitoare_3" index="0"]
+[node name="AnimatedSprite" parent="CutscenePlayer/CanvasLayer/Bocitoare_2" index="0"]
 animation = "idle"
 frame = 1
 
-[node name="TextImage" type="Sprite" parent="CutscenePlayer"]
+[node name="Bocitoare_3" parent="CutscenePlayer/CanvasLayer" instance=ExtResource( 1 )]
+position = Vector2( 38, 114 )
+
+[node name="AnimatedSprite" parent="CutscenePlayer/CanvasLayer/Bocitoare_3" index="0"]
+animation = "idle"
+
+[node name="TextImage" type="Sprite" parent="CutscenePlayer/CanvasLayer"]
 material = SubResource( 50 )
 position = Vector2( 203, 142 )
+z_index = 100
 texture = ExtResource( 2 )
 
-[node name="Cutscene" type="KinematicBody2D" parent="CutscenePlayer"]
+[node name="Cutscene" type="KinematicBody2D" parent="CutscenePlayer/CanvasLayer"]
 position = Vector2( 71, 44 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CutscenePlayer/Cutscene"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CutscenePlayer/CanvasLayer/Cutscene"]
 position = Vector2( 0, 9 )
 shape = SubResource( 8 )
 
-[node name="Light2D" type="Light2D" parent="CutscenePlayer/Cutscene"]
+[node name="Light2D" type="Light2D" parent="CutscenePlayer/CanvasLayer/Cutscene"]
 position = Vector2( 19, 2 )
 scale = Vector2( 0.594727, 486 )
 z_index = 95
@@ -149,9 +150,10 @@ shadow_gradient_length = 1.4
 shadow_filter = 3
 shadow_filter_smooth = 5.3
 
-[node name="Sprite" type="Sprite" parent="CutscenePlayer/Cutscene/Light2D"]
+[node name="Sprite" type="Sprite" parent="CutscenePlayer/CanvasLayer/Cutscene/Light2D"]
+z_index = 100
 
-[node name="Camera2D" type="Camera2D" parent="CutscenePlayer/Cutscene"]
+[node name="Camera2D" type="Camera2D" parent="CutscenePlayer/CanvasLayer/Cutscene"]
 current = true
 limit_left = 0
 limit_top = 0
@@ -160,6 +162,6 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
 
-[editable path="CutscenePlayer/Bocitoare_1"]
-[editable path="CutscenePlayer/Bocitoare_2"]
-[editable path="CutscenePlayer/Bocitoare_3"]
+[editable path="CutscenePlayer/CanvasLayer/Bocitoare_1"]
+[editable path="CutscenePlayer/CanvasLayer/Bocitoare_2"]
+[editable path="CutscenePlayer/CanvasLayer/Bocitoare_3"]

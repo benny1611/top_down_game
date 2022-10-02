@@ -20,7 +20,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21, 8 )
+extents = Vector2( 21, 11 )
 
 [node name="Log3" type="AnimatedSprite"]
 position = Vector2( 0, 9 )

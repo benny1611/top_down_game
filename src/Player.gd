@@ -157,6 +157,9 @@ func add_treasure():
 	Global.emit_signal("update_treasure")
 	if treasures >= Global.ALL_TREASURES:
 		emit_signal("won")
+		
+func i_win():
+	emit_signal("won")
 
 
 func update_camera_limits(rect : Rect2):

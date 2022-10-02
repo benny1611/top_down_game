@@ -1,6 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/Old_Fly_Man_Idle.png" type="Texture" id=1]
+[ext_resource path="res://src/OldMan.gd" type="Script" id=2]
+[ext_resource path="res://assets/text_6_END.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -65,7 +67,27 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 3.5, 10 )
 
+[sub_resource type="Animation" id=16]
+resource_name = "show_text"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/CanvasLayer/Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [node name="OldMan" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 14 )
@@ -75,3 +97,16 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, 6 )
 shape = SubResource( 15 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show_text = SubResource( 16 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AnimationPlayer"]
+
+[node name="Sprite" type="Sprite" parent="AnimationPlayer/CanvasLayer"]
+position = Vector2( 78, 60 )
+texture = ExtResource( 3 )
+
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_screen_entered"]

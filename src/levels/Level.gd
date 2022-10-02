@@ -18,5 +18,9 @@ func ready_for_level(value: String):
 	get_node("Player").visible = true
 	get_node("Player/Camera2D").current = true
 	get_node("Player").movement = true
+	get_node("Player/AnimationPlayer").play("pop_up")
+	get_node("Player/AnimationPlayer").connect("animation_finished", self, "del_player")
 	cutscene.queue_free()
 	
+func del_player(value: String):
+	get_node("Player/AnimationPlayer").queue_free()

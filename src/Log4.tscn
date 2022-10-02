@@ -20,7 +20,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.5, 12.5 )
+extents = Vector2( 34.5, 13.5 )
 
 [node name="Log4" type="AnimatedSprite"]
 z_index = 95

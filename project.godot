@@ -71,6 +71,10 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "res://addons/vnen.tiled_importer/plugin.cfg" )
 
+[global]
+
+fullscreen=false
+
 [importer_defaults]
 
 texture={

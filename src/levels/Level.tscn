@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/Gamejam Tileset.tmx" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://src/Log3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Cutscene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Water.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/PlayerAsEnemyLR.gd" type="Script" id=8]
 [ext_resource path="res://src/Fox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Vidra.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/PlayerAsEnemyLR.tscn" type="PackedScene" id=12]
@@ -25,7 +24,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 104, 16 )
+"points": PoolVector2Array( 0, 0, 0, 0, 3, 21, 0, 0, 0, 0, 94, 21 )
 }
 
 [sub_resource type="Curve2D" id=2]
@@ -64,11 +63,11 @@ visible = false
 color = Color( 0.0745098, 0.00392157, 0.00392157, 1 )
 
 [node name="orz1" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1496, 112 )
+position = Vector2( 1497, 101 )
 z_index = 100
 
 [node name="orz2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1896, 112 )
+position = Vector2( 1897, 106 )
 z_index = 100
 curve = SubResource( 1 )
 
@@ -116,34 +115,51 @@ z_index = 100
 position = Vector2( 680, 96 )
 z_index = 100
 
+[node name="AnimatedSprite" parent="Wolf" index="0"]
+frame = 5
+
+[node name="Sprite" parent="Wolf/AnimationPlayer/CanvasLayer" index="0"]
+visible = false
+
 [node name="Fox" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1088, 40 )
 z_index = 100
 
+[node name="AnimatedSprite" parent="Fox" index="0"]
+frame = 3
+
+[node name="Sprite" parent="Fox/AnimationPlayer/CanvasLayer" index="0"]
+visible = false
+
 [node name="Vidra" parent="." instance=ExtResource( 11 )]
-position = Vector2( 2408, 32 )
+position = Vector2( 2405, 30 )
 z_index = 100
-script = ExtResource( 8 )
+
+[node name="AnimatedSprite" parent="Vidra" index="0"]
+frame = 20
+
+[node name="Sprite" parent="Vidra/AnimationPlayer/CanvasLayer" index="0"]
+visible = false
 
 [node name="Cutscene" parent="." instance=ExtResource( 6 )]
 
-[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/Bocitoare_1" index="0"]
+[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_1" index="0"]
 frame = 0
 
-[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/Bocitoare_2" index="0"]
-frame = 3
-
-[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/Bocitoare_3" index="0"]
-frame = 3
+[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_3" index="0"]
+frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 304, 80 )
+position = Vector2( 298, 83 )
 
 [node name="Camera2D" parent="Player" index="4"]
 current = false
 
 [node name="FadeLayer" parent="Player" index="6"]
 visible = true
+
+[node name="Sprite" parent="Player/AnimationPlayer/CanvasLayer" index="0"]
+visible = false
 
 [node name="Gamejam Tileset" parent="." instance=ExtResource( 1 )]
 
@@ -510,7 +526,7 @@ position = Vector2( 2552, 224 )
 rotation = 1.5708
 
 [node name="Log4_1" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 2440, -16 )
+position = Vector2( 2457, -40 )
 rotation = 1.5708
 
 [node name="Log4_2" parent="Water" instance=ExtResource( 4 )]
@@ -558,13 +574,23 @@ position = Vector2( 2872, 96 )
 position = Vector2( 2904, 112 )
 
 [node name="OldMan" parent="." instance=ExtResource( 23 )]
-position = Vector2( 2880, 32 )
+position = Vector2( 2866, 32 )
+
+[node name="AnimatedSprite" parent="OldMan" index="0"]
+frame = 5
+
+[node name="Sprite" parent="OldMan/AnimationPlayer/CanvasLayer" index="0"]
+visible = false
 
 [node name="RedLady" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2904, 72 )
 
+[editable path="Wolf"]
+[editable path="Fox"]
+[editable path="Vidra"]
 [editable path="Cutscene"]
-[editable path="Cutscene/CutscenePlayer/Bocitoare_1"]
-[editable path="Cutscene/CutscenePlayer/Bocitoare_2"]
-[editable path="Cutscene/CutscenePlayer/Bocitoare_3"]
+[editable path="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_1"]
+[editable path="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_2"]
+[editable path="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_3"]
 [editable path="Player"]
+[editable path="OldMan"]
