@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/Gamejam Tileset.tmx" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://src/Log3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Cutscene.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Water.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/WinningArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Background_Open.wav" type="AudioStream" id=9]
 [ext_resource path="res://src/Fox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Vidra.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/PlayerAsEnemyLR.tscn" type="PackedScene" id=12]
@@ -116,7 +118,7 @@ position = Vector2( 680, 96 )
 z_index = 100
 
 [node name="AnimatedSprite" parent="Wolf" index="0"]
-frame = 2
+frame = 0
 
 [node name="Sprite" parent="Wolf/AnimationPlayer/CanvasLayer" index="0"]
 visible = false
@@ -126,7 +128,7 @@ position = Vector2( 1088, 40 )
 z_index = 100
 
 [node name="AnimatedSprite" parent="Fox" index="0"]
-frame = 2
+frame = 4
 
 [node name="Sprite" parent="Fox/AnimationPlayer/CanvasLayer" index="0"]
 visible = false
@@ -136,15 +138,21 @@ position = Vector2( 2405, 30 )
 z_index = 100
 
 [node name="AnimatedSprite" parent="Vidra" index="0"]
-frame = 12
+frame = 16
 
 [node name="Sprite" parent="Vidra/AnimationPlayer/CanvasLayer" index="0"]
 visible = false
 
 [node name="Cutscene" parent="." instance=ExtResource( 6 )]
 
+[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_1" index="0"]
+frame = 0
+
+[node name="AnimatedSprite" parent="Cutscene/CutscenePlayer/CanvasLayer/Bocitoare_3" index="0"]
+frame = 0
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 302, 76 )
+position = Vector2( 293, 75 )
 
 [node name="Camera2D" parent="Player" index="4"]
 current = false
@@ -575,13 +583,21 @@ position = Vector2( 2904, 112 )
 position = Vector2( 2866, 32 )
 
 [node name="AnimatedSprite" parent="OldMan" index="0"]
-frame = 5
+frame = 7
 
 [node name="Sprite" parent="OldMan/AnimationPlayer/CanvasLayer" index="0"]
 visible = false
 
 [node name="RedLady" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2904, 72 )
+
+[node name="WinningArea" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2942, 103 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -32.32
+autoplay = true
 
 [editable path="Wolf"]
 [editable path="Fox"]

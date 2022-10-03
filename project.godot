@@ -57,6 +57,7 @@ config/icon="res://assets/obstacle.png"
 [autoload]
 
 Global="*res://src/Global.gd"
+BackgroundMusic="*res://src/levels/Level.tscn"
 
 [display]
 

@@ -158,8 +158,14 @@ func add_treasure():
 	if treasures >= Global.ALL_TREASURES:
 		emit_signal("won")
 		
-func i_win():
+func won():
 	emit_signal("won")
+	$FadeLayer.visible = true
+	$FadeLayer/Fade/Player.play("fade_out")
+	$FadeLayer/Fade/Player.connect("animation_finished", self, "player_has_won")
+	
+func player_has_won(value: String):
+	get_tree().change_scene("res://src/EndScene.tscn")
 
 
 func update_camera_limits(rect : Rect2):

@@ -7,7 +7,7 @@
 [ext_resource path="res://src/UI.gd" type="Script" id=5]
 [ext_resource path="res://src/GameEnd.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Fade.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Formant_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/Background_Open.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fadeout"
@@ -64,7 +64,6 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-autoplay = true
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 visible = false

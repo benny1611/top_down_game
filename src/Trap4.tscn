@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://assets/Death_Sound.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Entity.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/trap.wav" type="AudioStream" id=4]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends \"res://src/Entity.gd\"
@@ -23,4 +23,4 @@ script = SubResource( 3 )
 shape = SubResource( 2 )
 
 [node name="TrapSound" type="AudioStreamPlayer" parent="." index="2"]
-stream = ExtResource( 4 )
+stream = ExtResource( 1 )
